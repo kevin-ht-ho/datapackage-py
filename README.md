@@ -263,7 +263,6 @@ Let's create and read a resource. Because resource is tabular we could use `reso
 ```python
 resource = Resource({path: 'data.csv'})
 resource.tabular # true
-resource.headers # ['city', 'location']
 resource.read(keyed=True)
 # [
 #   {city: 'london', location: '51.50,-0.11'},
@@ -271,6 +270,7 @@ resource.read(keyed=True)
 #   {city: 'rome', location: 'N/A'},
 # ]
 ```
+
 
 As we could see our locations are just a strings. But it should be geopoints. Also Rome's location is not available but it's also just a `N/A` string instead of Python `None`. First we have to infer resource metadata:
 
